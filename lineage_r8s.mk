@@ -3,7 +3,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/x1s/device.mk)
+$(call inherit-product, device/samsung/r8s/device.mk)
 
 ### BOOTANIMATION
 # vendor/lineage/config/common_full_phone.mk
@@ -18,23 +18,23 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_x1s
-PRODUCT_DEVICE := x1s
+PRODUCT_NAME := lineage_r8s
+PRODUCT_DEVICE := r8s
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-G981B
+PRODUCT_MODEL := SM-G780F
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_PDA_MODEL := G981B
-PRODUCT_PDA_MODEL_VERSION := XXU7DUE1
+PRODUCT_PDA_MODEL := G780F
+PRODUCT_PDA_MODEL_VERSION := XXS3CUD7
 PRODUCT_PDA_VERSION := $(PRODUCT_PDA_MODEL)$(PRODUCT_PDA_MODEL_VERSION)
 PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=x1sxxx \
-    PRODUCT_DEVICE=x1s \
-    PRIVATE_BUILD_DESC="x1sxxx-user 11 RP1A.200720.012 $(PRODUCT_PDA_VERSION) release-keys"
+    PRODUCT_NAME=r8sxxx \
+    PRODUCT_DEVICE=r8s \
+    PRIVATE_BUILD_DESC="r8sxxx-user 11 RP1A.200720.012 $(PRODUCT_PDA_VERSION) release-keys"
 
-BUILD_FINGERPRINT := samsung/x1sxxx/x1s:11/RP1A.200720.012/$(PRODUCT_PDA_VERSION):user/release-keys
+BUILD_FINGERPRINT := samsung/r8sxxx/r8s:11/RP1A.200720.012/$(PRODUCT_PDA_VERSION):user/release-keys
 
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.build.PDA=$(PRODUCT_PDA_VERSION)

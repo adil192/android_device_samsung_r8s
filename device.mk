@@ -1,12 +1,12 @@
 ### PLATFORM
 $(call inherit-product, device/samsung/exynos990-common/platform.mk)
 ### PROPRIETARY VENDOR FILES
-$(call inherit-product, vendor/samsung/x1s/x1s-vendor.mk)
+$(call inherit-product, vendor/samsung/r8s/r8s-vendor.mk)
 
 ### DALVIK
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-DEVICE_PATH := device/samsung/x1s
+DEVICE_PATH := device/samsung/r8s
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := large
