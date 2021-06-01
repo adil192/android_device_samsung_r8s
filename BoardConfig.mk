@@ -14,16 +14,16 @@
 # limitations under the License.
 
 include device/samsung/exynos990-common/BoardConfigPlatform.mk
-include vendor/samsung/x1s/BoardConfigVendor.mk
+include vendor/samsung/r8s/BoardConfigVendor.mk
 
-DEVICE_PATH := device/samsung/x1s
+DEVICE_PATH := device/samsung/r8s
 
 PRODUCT_PLATFORM := exynos990
 
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
-TARGET_OTA_ASSERT_DEVICE := x1s
+TARGET_OTA_ASSERT_DEVICE := r8s
 
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/hardware/include
 
@@ -31,10 +31,10 @@ TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/hardware/include
 TARGET_SCREEN_DENSITY := 480
 
 ### INIT
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_x1s
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_r8s
 
 ### KERNEL
-TARGET_KERNEL_CONFIG := exynos9830-x1sxxx_defconfig
+TARGET_KERNEL_CONFIG := exynos9830-r8sxxx_defconfig
 
 ### SYSTEM PROPS
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
