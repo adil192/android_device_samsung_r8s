@@ -42,10 +42,10 @@ void vendor_load_properties()
     std::string bootloader = GetProperty("ro.bootloader", "");
 
     if (bootloader.find("G780F") == 0) {
-        property_override("ro.build.description", "r8sxx-user 11 RP1A.200720.012 G780FXXS3CUD7 release-keys");
-        set_ro_build_prop("fingerprint", "samsung/r8sxx/r8s:11/RP1A.200720.012/G780FXXS3CUD7:user/release-keys");
+        property_override("ro.build.description", "r8slte-user 11 RP1A.200720.012 G780FXXS3CUD7 release-keys");
+        set_ro_build_prop("fingerprint", "samsung/r8slte/r8s:11/RP1A.200720.012/G780FXXS3CUD7:user/release-keys");
         set_ro_product_prop("model", "SM-G780F");
-        set_ro_product_prop("name", "r8sxx");
+        set_ro_product_prop("name", "r8slte");
     }
 
     std::string device = GetProperty("ro.product.device", "");
