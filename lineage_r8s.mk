@@ -7,8 +7,8 @@ $(call inherit-product, device/samsung/r8s/device.mk)
 
 ### BOOTANIMATION
 # vendor/lineage/config/common_full_phone.mk
-TARGET_SCREEN_HEIGHT := 3200
-TARGET_SCREEN_WIDTH := 1440
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 # vendor/lineage/config/common.mk
 
 ### LINEAGE
