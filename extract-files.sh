@@ -6,16 +6,68 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# If we're being sourced by the common script that we called,
-# stop right here. No need to go down the rabbit hole.
-if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
-    return
-fi
-
 set -e
 
-export DEVICE=r8s
-export DEVICE_COMMON=exynos990-common
-export VENDOR=samsung
+DEVICE=r8s
+VENDOR=samsung
 
-"./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
+# Load extract_utils and do some sanity checks
+MY_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
+
+ANDROID_ROOT="${MY_DIR}/../../.."
+
+HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
+    echo "Unable to find helper script at ${HELPER}"
+    exit 1
+fi
+source "${HELPER}"
+
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
+
+KANG=
+SECTION=
+
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+        -n | --no-cleanup )
+                CLEAN_VENDOR=false
+                ;;
+        -k | --kang )
+                KANG="--kang"
+                ;;
+        -s | --section )
+                SECTION="${2}"; shift
+                CLEAN_VENDOR=false
+                ;;
+        * )
+                SRC="${1}"
+                ;;
+    esac
+    shift
+done
+
+if [ -z "${SRC}" ]; then
+    SRC="adb"
+fi
+
+function blob_fixup() {
+    case "${1}" in
+        vendor/etc/libnfc-nci.conf)
+            sed -i 's/\/data\/nfc/\/data\/vendor\/nfc/g' "${2}"
+            ;;
+        vendor/lib*/libsensorlistener.so)
+            "${PATCHELF}" --add-needed libshim_sensorndkbridge.so "${2}"
+            ;;
+    esac
+}
+
+# Initialize the helper
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
+
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+extract "${MY_DIR}/proprietary-files-vendor.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+
+"${MY_DIR}/setup-makefiles.sh"
