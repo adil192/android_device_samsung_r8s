@@ -91,11 +91,17 @@ vendor/lib64/libqfp_sensortest.so
 vendor/lib64/libsynaFpSensorTestNwd.so
 
 ### BLUETOOTH
-vendor/lib64/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
-vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib/vendor.samsung.hardware.bluetooth@2.0.so
 vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 vendor/lib/vendor.samsung.hardware.bluetooth.a2dpsink@1.0.so
-vendor/lib/vendor.samsung.hardware.bluetooth@2.0.so
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib/hw/vendor.samsung.hardware.bluetooth.a2dp@1.0-impl.so
+vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
+vendor/lib64/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/vendor.samsung.hardware.bluetooth.a2dp@1.0-impl.so
 
 # CAMERA
 -vendor/lib/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so
@@ -501,6 +507,17 @@ vendor/bin/hw/macloader
 vendor/etc/init/wifi_qcom_ap_exynos.rc
 vendor/etc/init/wifi.rc
 vendor/etc/wifi/indoorchannel.info
+vendor/etc/wlan_common_rc
+vendor/etc/wlan_vendor_rc
+vendor/firmware/qca6390/amss20.bin
+vendor/firmware/qca6390/bdwlan.elf
+vendor/firmware/qca6390/bdwlan.elf1
+vendor/firmware/qca6390/bdwlan.elf2
+vendor/firmware/qca6390/m3.bin
+vendor/firmware/qca6390/regdb.bin
+vendor/firmware/wlan/qcom_cfg.ini
+vendor/lib/libcld80211.so
+vendor/lib64/libcld80211.so
 
 ## vendor/firmware
 vendor/firmware/APBargeIn_AUDIO_SLSI.bin
@@ -571,13 +588,6 @@ vendor/firmware/liblog.elf
 vendor/firmware/libnn.elf
 vendor/firmware/listenbackeffect.bin
 vendor/firmware/mfc_fw.bin
-vendor/firmware/qca6390/amss20.bin
-vendor/firmware/qca6390/bdwlan.elf
-vendor/firmware/qca6390/bdwlan.elf1
-vendor/firmware/qca6390/bdwlan.elf2
-vendor/firmware/qca6390/m3.bin
-vendor/firmware/qca6390/regdb.bin
-vendor/firmware/wlan/qcom_cfg.ini
 vendor/firmware/rgb2bayer.bin
 vendor/firmware/rxse.bin
 vendor/firmware/sb_ll.bin

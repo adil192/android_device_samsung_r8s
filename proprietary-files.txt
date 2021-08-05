@@ -1,8 +1,13 @@
 # Proprietary files - from Samsung package version G780FXXS3CUD7, unless pinned
 
-### BLUETOOTH
+### BLUETOOTH + WIFI
 # Bluetooth (AptX) - from crosshatch - RQ1A.201205.003
 system/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+system/lib64/libnl.so
+system/lib/libm.so
+system/lib64/libm.so
+system/lib/bootstrap/libm.so
+system/lib64/bootstrap/libm.so
 
 ### CAMERA
 # Copied by vendor_init which needs read access
