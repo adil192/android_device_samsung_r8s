@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (C) 2020 The LineageOS Project
+-->
+<resources>
+    <!-- Preferred refresh rate at keyguard, if supported by the display -->
+    <integer name="config_keyguardRefreshRate">120</integer>
+</resources>
