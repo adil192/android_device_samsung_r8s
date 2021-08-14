@@ -520,6 +520,7 @@ vendor/lib/libcld80211.so
 vendor/lib64/libcld80211.so
 
 ## vendor/firmware
+vendor/firmware/a96t356_r8s.bin
 vendor/firmware/APBargeIn_AUDIO_SLSI.bin
 vendor/firmware/APBiBF_AUDIO_SLSI.bin
 vendor/firmware/APDV_AUDIO_SLSI.bin
